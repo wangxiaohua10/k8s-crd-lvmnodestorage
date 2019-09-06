@@ -27,8 +27,44 @@ spec:
       JSONPath: .spec.nodeName
     - name: LvName
       type: string
-      description: volume group name 
+      description: logical volume name 
       JSONPath: .spec.lvName
+    - name: VGName
+      type: string
+      description: volume group name 
+      JSONPath: .spec.vgName 
+    - name: LVSize
+      type: number
+      description: logical volume size
+      JSONPath: .spec.lvSize    
+    - name: VGSize
+      type: number
+      description: volume group size
+      JSONPath: .spec.vgsize    
+    - name: VGFree
+      type: number
+      description: volume group free 
+      JSONPath: .spec.vgfree                          
+    - name: Attrs
+      type: string
+      description: attributions
+      JSONPath: .spec.attrs
+    - name: VolumeType
+      type: integer
+      description: volume type
+      JSONPath: .spec.volumeType
+    - name: AllocationPolicy
+      type: integer
+      description: allocation policy
+      JSONPath: .spec.allocationType
+    - name: Locked
+      type: boolean
+      description: 
+      JSONPath: .spec.locked
+    - name: FixedMinor
+      type: boolean
+      description: fixed minor
+      JSONPath: .spec.fixedMinor                    
     - name: Age
       type: date
       JSONPath: .metadata.creationTimestamp

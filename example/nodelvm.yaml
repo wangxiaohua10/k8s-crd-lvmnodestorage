@@ -4,4 +4,15 @@ metadata:
   name: mynodelvm
 spec:
   nodeName: "test-l27-12-103"
-  lvName: "aaaa"
+  lvName: "lv1"
+  vgName: "vg1"
+  lvSize: 0.1
+  vgsize: 1.7
+  vgfree: 1.6
+  attrs: "--aa"
+  volumeType: 1
+  writable: 1
+  allocationType: 1
+  locked: 1
+  fixedMinor: 1
+  state: 1
