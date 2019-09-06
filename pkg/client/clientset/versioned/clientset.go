@@ -19,7 +19,7 @@ limitations under the License.
 package versioned
 
 import (
-	lvmv1 "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
+	lvmv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
 
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"

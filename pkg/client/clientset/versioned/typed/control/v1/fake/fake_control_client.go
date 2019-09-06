@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	v1 "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
+	v1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
 
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"

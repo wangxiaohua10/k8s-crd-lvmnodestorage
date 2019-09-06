@@ -19,7 +19,7 @@ limitations under the License.
 package scheme
 
 import (
-	lvmv1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	lvmv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"

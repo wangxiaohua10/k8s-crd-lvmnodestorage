@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"k8s-crd-lvmnodestorage/pkg/apis/control"
+	"github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

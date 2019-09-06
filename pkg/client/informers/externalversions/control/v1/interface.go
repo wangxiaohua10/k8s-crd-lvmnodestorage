@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	internalinterfaces "k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.

@@ -19,10 +19,10 @@ limitations under the License.
 package v1
 
 import (
-	controlv1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
-	versioned "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
-	internalinterfaces "k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
-	v1 "k8s-crd-lvmnodestorage/pkg/client/listers/control/v1"
+	controlv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	versioned "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/listers/control/v1"
 	time "time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

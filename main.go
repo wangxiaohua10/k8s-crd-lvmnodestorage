@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	lvmv1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
-	lvmclientset "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
+	lvmv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	lvmclientset "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
 
 	"k8s.io/klog"
 

@@ -19,9 +19,9 @@ limitations under the License.
 package externalversions
 
 import (
-	versioned "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
-	control "k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/control"
-	internalinterfaces "k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
+	versioned "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
+	control "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/control"
+	internalinterfaces "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
 	reflect "reflect"
 	sync "sync"
 	time "time"
