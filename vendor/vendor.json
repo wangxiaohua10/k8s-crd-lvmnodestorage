@@ -165,6 +165,36 @@
 			"revisionTime": "2019-02-27T00:00:51Z"
 		},
 		{
+			"checksumSHA1": "qnrAq7r+uqeLRsrJQdd0AlYDXAc=",
+			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control",
+			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
+			"revisionTime": "2019-09-06T07:13:41Z"
+		},
+		{
+			"checksumSHA1": "E9xWwqffGczYL233OwlGK3HBoL0=",
+			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1",
+			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
+			"revisionTime": "2019-09-06T07:13:41Z"
+		},
+		{
+			"checksumSHA1": "pBlNsvBgHR5nr6SZ7JejthEdTNw=",
+			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned",
+			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
+			"revisionTime": "2019-09-06T07:13:41Z"
+		},
+		{
+			"checksumSHA1": "0womcu//WCAbCfyUnmdsgQefHWU=",
+			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/scheme",
+			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
+			"revisionTime": "2019-09-06T07:13:41Z"
+		},
+		{
+			"checksumSHA1": "tra0MfXs9IxszAWKhZu1z7kg5SA=",
+			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1",
+			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
+			"revisionTime": "2019-09-06T07:13:41Z"
+		},
+		{
 			"checksumSHA1": "Zsm3tvgRFJOt3afwwhrGymcSZgg=",
 			"path": "golang.org/x/crypto/ssh/terminal",
 			"revision": "9756ffdc24725223350eb3266ffb92590d28f278",
