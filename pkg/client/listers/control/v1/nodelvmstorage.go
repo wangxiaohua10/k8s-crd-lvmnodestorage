@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	v1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
 
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"

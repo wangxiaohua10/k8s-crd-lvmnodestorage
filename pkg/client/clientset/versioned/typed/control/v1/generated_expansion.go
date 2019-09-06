@@ -19,3 +19,7 @@ limitations under the License.
 package v1
 
 type NodeLVMStorageExpansion interface{}
+
+type NodeLvmPhysicalVolumeExpansion interface{}
+
+type NodeLvmVolumeGroupExpansion interface{}

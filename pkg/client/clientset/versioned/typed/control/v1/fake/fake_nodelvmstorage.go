@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	controlv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	controlv1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"

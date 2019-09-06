@@ -19,7 +19,7 @@ limitations under the License.
 package fake
 
 import (
-	v1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
+	v1 "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
 
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
@@ -31,6 +31,14 @@ type FakeLvmV1 struct {
 
 func (c *FakeLvmV1) NodeLVMStorages() v1.NodeLVMStorageInterface {
 	return &FakeNodeLVMStorages{c}
+}
+
+func (c *FakeLvmV1) NodeLvmPhysicalVolumes() v1.NodeLvmPhysicalVolumeInterface {
+	return &FakeNodeLvmPhysicalVolumes{c}
+}
+
+func (c *FakeLvmV1) NodeLvmVolumeGroups() v1.NodeLvmVolumeGroupInterface {
+	return &FakeNodeLvmVolumeGroups{c}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

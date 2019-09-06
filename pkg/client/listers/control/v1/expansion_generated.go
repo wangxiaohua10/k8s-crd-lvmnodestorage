@@ -21,3 +21,11 @@ package v1
 // NodeLVMStorageListerExpansion allows custom methods to be added to
 // NodeLVMStorageLister.
 type NodeLVMStorageListerExpansion interface{}
+
+// NodeLvmPhysicalVolumeListerExpansion allows custom methods to be added to
+// NodeLvmPhysicalVolumeLister.
+type NodeLvmPhysicalVolumeListerExpansion interface{}
+
+// NodeLvmVolumeGroupListerExpansion allows custom methods to be added to
+// NodeLvmVolumeGroupLister.
+type NodeLvmVolumeGroupListerExpansion interface{}

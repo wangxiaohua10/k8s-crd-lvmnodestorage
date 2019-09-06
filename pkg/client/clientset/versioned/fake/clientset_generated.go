@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
-	lvmv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
-	fakelvmv1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1/fake"
+	clientset "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
+	lvmv1 "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1"
+	fakelvmv1 "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/typed/control/v1/fake"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"

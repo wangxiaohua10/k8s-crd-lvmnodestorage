@@ -19,13 +19,17 @@ limitations under the License.
 package v1
 
 import (
-	internalinterfaces "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
+	internalinterfaces "k8s-crd-lvmnodestorage/pkg/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.
 type Interface interface {
 	// NodeLVMStorages returns a NodeLVMStorageInformer.
 	NodeLVMStorages() NodeLVMStorageInformer
+	// NodeLvmPhysicalVolumes returns a NodeLvmPhysicalVolumeInformer.
+	NodeLvmPhysicalVolumes() NodeLvmPhysicalVolumeInformer
+	// NodeLvmVolumeGroups returns a NodeLvmVolumeGroupInformer.
+	NodeLvmVolumeGroups() NodeLvmVolumeGroupInformer
 }
 
 type version struct {
@@ -42,4 +46,14 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // NodeLVMStorages returns a NodeLVMStorageInformer.
 func (v *version) NodeLVMStorages() NodeLVMStorageInformer {
 	return &nodeLVMStorageInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
+}
+
+// NodeLvmPhysicalVolumes returns a NodeLvmPhysicalVolumeInformer.
+func (v *version) NodeLvmPhysicalVolumes() NodeLvmPhysicalVolumeInformer {
+	return &nodeLvmPhysicalVolumeInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// NodeLvmVolumeGroups returns a NodeLvmVolumeGroupInformer.
+func (v *version) NodeLvmVolumeGroups() NodeLvmVolumeGroupInformer {
+	return &nodeLvmVolumeGroupInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

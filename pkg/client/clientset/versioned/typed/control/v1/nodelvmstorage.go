@@ -19,8 +19,8 @@ limitations under the License.
 package v1
 
 import (
-	v1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
-	scheme "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/scheme"
+	v1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	scheme "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned/scheme"
 	"time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

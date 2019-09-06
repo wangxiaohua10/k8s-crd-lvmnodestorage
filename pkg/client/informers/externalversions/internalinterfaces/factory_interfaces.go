@@ -19,7 +19,7 @@ limitations under the License.
 package internalinterfaces
 
 import (
-	versioned "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
+	versioned "k8s-crd-lvmnodestorage/pkg/client/clientset/versioned"
 	time "time"
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"

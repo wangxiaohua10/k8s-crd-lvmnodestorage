@@ -31,58 +31,58 @@ import (
 	cache "k8s.io/client-go/tools/cache"
 )
 
-// NodeLVMStorageInformer provides access to a shared informer and lister for
-// NodeLVMStorages.
-type NodeLVMStorageInformer interface {
+// NodeLvmVolumeGroupInformer provides access to a shared informer and lister for
+// NodeLvmVolumeGroups.
+type NodeLvmVolumeGroupInformer interface {
 	Informer() cache.SharedIndexInformer
-	Lister() v1.NodeLVMStorageLister
+	Lister() v1.NodeLvmVolumeGroupLister
 }
 
-type nodeLVMStorageInformer struct {
+type nodeLvmVolumeGroupInformer struct {
 	factory          internalinterfaces.SharedInformerFactory
 	tweakListOptions internalinterfaces.TweakListOptionsFunc
 }
 
-// NewNodeLVMStorageInformer constructs a new informer for NodeLVMStorage type.
+// NewNodeLvmVolumeGroupInformer constructs a new informer for NodeLvmVolumeGroup type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
-func NewNodeLVMStorageInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
-	return NewFilteredNodeLVMStorageInformer(client, resyncPeriod, indexers, nil)
+func NewNodeLvmVolumeGroupInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
+	return NewFilteredNodeLvmVolumeGroupInformer(client, resyncPeriod, indexers, nil)
 }
 
-// NewFilteredNodeLVMStorageInformer constructs a new informer for NodeLVMStorage type.
+// NewFilteredNodeLvmVolumeGroupInformer constructs a new informer for NodeLvmVolumeGroup type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
-func NewFilteredNodeLVMStorageInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
+func NewFilteredNodeLvmVolumeGroupInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
 	return cache.NewSharedIndexInformer(
 		&cache.ListWatch{
 			ListFunc: func(options metav1.ListOptions) (runtime.Object, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.LvmV1().NodeLVMStorages().List(options)
+				return client.LvmV1().NodeLvmVolumeGroups().List(options)
 			},
 			WatchFunc: func(options metav1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.LvmV1().NodeLVMStorages().Watch(options)
+				return client.LvmV1().NodeLvmVolumeGroups().Watch(options)
 			},
 		},
-		&controlv1.NodeLVMStorage{},
+		&controlv1.NodeLvmVolumeGroup{},
 		resyncPeriod,
 		indexers,
 	)
 }
 
-func (f *nodeLVMStorageInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
-	return NewFilteredNodeLVMStorageInformer(client, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
+func (f *nodeLvmVolumeGroupInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
+	return NewFilteredNodeLvmVolumeGroupInformer(client, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
 }
 
-func (f *nodeLVMStorageInformer) Informer() cache.SharedIndexInformer {
-	return f.factory.InformerFor(&controlv1.NodeLVMStorage{}, f.defaultInformer)
+func (f *nodeLvmVolumeGroupInformer) Informer() cache.SharedIndexInformer {
+	return f.factory.InformerFor(&controlv1.NodeLvmVolumeGroup{}, f.defaultInformer)
 }
 
-func (f *nodeLVMStorageInformer) Lister() v1.NodeLVMStorageLister {
-	return v1.NewNodeLVMStorageLister(f.Informer().GetIndexer())
+func (f *nodeLvmVolumeGroupInformer) Lister() v1.NodeLvmVolumeGroupLister {
+	return v1.NewNodeLvmVolumeGroupLister(f.Informer().GetIndexer())
 }

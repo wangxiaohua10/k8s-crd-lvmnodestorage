@@ -31,58 +31,58 @@ import (
 	cache "k8s.io/client-go/tools/cache"
 )
 
-// NodeLVMStorageInformer provides access to a shared informer and lister for
-// NodeLVMStorages.
-type NodeLVMStorageInformer interface {
+// NodeLvmPhysicalVolumeInformer provides access to a shared informer and lister for
+// NodeLvmPhysicalVolumes.
+type NodeLvmPhysicalVolumeInformer interface {
 	Informer() cache.SharedIndexInformer
-	Lister() v1.NodeLVMStorageLister
+	Lister() v1.NodeLvmPhysicalVolumeLister
 }
 
-type nodeLVMStorageInformer struct {
+type nodeLvmPhysicalVolumeInformer struct {
 	factory          internalinterfaces.SharedInformerFactory
 	tweakListOptions internalinterfaces.TweakListOptionsFunc
 }
 
-// NewNodeLVMStorageInformer constructs a new informer for NodeLVMStorage type.
+// NewNodeLvmPhysicalVolumeInformer constructs a new informer for NodeLvmPhysicalVolume type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
-func NewNodeLVMStorageInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
-	return NewFilteredNodeLVMStorageInformer(client, resyncPeriod, indexers, nil)
+func NewNodeLvmPhysicalVolumeInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {
+	return NewFilteredNodeLvmPhysicalVolumeInformer(client, resyncPeriod, indexers, nil)
 }
 
-// NewFilteredNodeLVMStorageInformer constructs a new informer for NodeLVMStorage type.
+// NewFilteredNodeLvmPhysicalVolumeInformer constructs a new informer for NodeLvmPhysicalVolume type.
 // Always prefer using an informer factory to get a shared informer instead of getting an independent
 // one. This reduces memory footprint and number of connections to the server.
-func NewFilteredNodeLVMStorageInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
+func NewFilteredNodeLvmPhysicalVolumeInformer(client versioned.Interface, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {
 	return cache.NewSharedIndexInformer(
 		&cache.ListWatch{
 			ListFunc: func(options metav1.ListOptions) (runtime.Object, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.LvmV1().NodeLVMStorages().List(options)
+				return client.LvmV1().NodeLvmPhysicalVolumes().List(options)
 			},
 			WatchFunc: func(options metav1.ListOptions) (watch.Interface, error) {
 				if tweakListOptions != nil {
 					tweakListOptions(&options)
 				}
-				return client.LvmV1().NodeLVMStorages().Watch(options)
+				return client.LvmV1().NodeLvmPhysicalVolumes().Watch(options)
 			},
 		},
-		&controlv1.NodeLVMStorage{},
+		&controlv1.NodeLvmPhysicalVolume{},
 		resyncPeriod,
 		indexers,
 	)
 }
 
-func (f *nodeLVMStorageInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
-	return NewFilteredNodeLVMStorageInformer(client, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
+func (f *nodeLvmPhysicalVolumeInformer) defaultInformer(client versioned.Interface, resyncPeriod time.Duration) cache.SharedIndexInformer {
+	return NewFilteredNodeLvmPhysicalVolumeInformer(client, resyncPeriod, cache.Indexers{cache.NamespaceIndex: cache.MetaNamespaceIndexFunc}, f.tweakListOptions)
 }
 
-func (f *nodeLVMStorageInformer) Informer() cache.SharedIndexInformer {
-	return f.factory.InformerFor(&controlv1.NodeLVMStorage{}, f.defaultInformer)
+func (f *nodeLvmPhysicalVolumeInformer) Informer() cache.SharedIndexInformer {
+	return f.factory.InformerFor(&controlv1.NodeLvmPhysicalVolume{}, f.defaultInformer)
 }
 
-func (f *nodeLVMStorageInformer) Lister() v1.NodeLVMStorageLister {
-	return v1.NewNodeLVMStorageLister(f.Informer().GetIndexer())
+func (f *nodeLvmPhysicalVolumeInformer) Lister() v1.NodeLvmPhysicalVolumeLister {
+	return v1.NewNodeLvmPhysicalVolumeLister(f.Informer().GetIndexer())
 }

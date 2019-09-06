@@ -20,7 +20,7 @@ package externalversions
 
 import (
 	"fmt"
-	v1 "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1"
+	v1 "k8s-crd-lvmnodestorage/pkg/apis/control/v1"
 
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
@@ -55,6 +55,10 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 	// Group=lvm.node.storage, Version=v1
 	case v1.SchemeGroupVersion.WithResource("nodelvmstorages"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Lvm().V1().NodeLVMStorages().Informer()}, nil
+	case v1.SchemeGroupVersion.WithResource("nodelvmphysicalvolumes"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Lvm().V1().NodeLvmPhysicalVolumes().Informer()}, nil
+	case v1.SchemeGroupVersion.WithResource("nodelvmvolumegroups"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Lvm().V1().NodeLvmVolumeGroups().Informer()}, nil
 
 	}
 

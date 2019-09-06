@@ -1,0 +1,66 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  # name must match the spec fields below, and be in the form: <plural>.<group>
+  name: nodelvmvgs.lvm.node.storage
+spec:
+  # group name to use for REST API: /apis/<group>/<version>
+  group: lvm.node.storage
+  # version name to use for REST API: /apis/<group>/<version>
+  version: v1
+  # either Namespaced or Cluster
+  scope: Cluster
+  names:
+    # plural name to be used in the URL: /apis/<group>/<version>/<plural>
+    plural: nodelvmvgs
+    # singular name to be used as an alias on the CLI and for display
+    singular: nodelvmvg
+    # kind is normally the CamelCased singular type. Your resource manifests use this.
+    kind: NodeLVMStorage
+    # shortNames allow shorter string to match your resource on the CLI
+    shortNames:
+    - lvmvg
+  additionalPrinterColumns:
+    - name: NodeName
+      type: string
+      description: node name
+      JSONPath: .spec.nodeName
+    - name: VGName
+      type: string
+      description: volume group name 
+      JSONPath: .spec.vgName 
+    - name: PhysicalVolumes
+      type: number
+      description: the count of physical
+      JSONPath: .spec.lvSize    
+    - name: VGSize
+      type: number
+      description: volume group size
+      JSONPath: .spec.vgsize    
+    - name: VGFree
+      type: number
+      description: volume group free 
+      JSONPath: .spec.vgfree                          
+    - name: Attrs
+      type: string
+      description: attributions
+      JSONPath: .spec.attrs
+    - name: VolumeType
+      type: integer
+      description: volume type
+      JSONPath: .spec.volumeType
+    - name: AllocationPolicy
+      type: integer
+      description: allocation policy
+      JSONPath: .spec.allocationType
+    - name: Locked
+      type: boolean
+      description: 
+      JSONPath: .spec.locked
+    - name: FixedMinor
+      type: boolean
+      description: fixed minor
+      JSONPath: .spec.fixedMinor                    
+    - name: Age
+      type: date
+      JSONPath: .metadata.creationTimestamp
