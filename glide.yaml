@@ -1,0 +1,26 @@
+package: k8s-crd-lvmnodestorage
+import:
+- package: k8s.io/apimachinery/pkg/api/errors
+- package: k8s.io/apimachinery/pkg/apis/meta/v1
+- package: k8s.io/apimachinery/pkg/labels
+- package: k8s.io/apimachinery/pkg/runtime
+  subpackages:
+  - schema
+  - serializer
+- package: k8s.io/apimachinery/pkg/types
+  repo: https://k8s.io/apimachinery/pkg/types
+  vcs: git
+  subpackages:
+  - types 
+  - util 
+  - watch 
+#- package: k8s.io/apimachinery/pkg/util/runtime
+#- package: k8s.io/apimachinery/pkg/watch
+- package: k8s.io/client-go/discovery
+  subpackages:
+  - fake
+- package: k8s.io/client-go/rest
+- package: k8s.io/client-go/testing
+- package: k8s.io/client-go/tools/cache
+- package: k8s.io/client-go/tools/clientcmd
+- package: k8s.io/client-go/util/flowcontrol

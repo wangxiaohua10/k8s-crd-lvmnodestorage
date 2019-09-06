@@ -1,0 +1,7 @@
+apiVersion: "lvm.node.storage/v1"
+kind: NodeLVMStorage
+metadata:
+  name: mynodelvm
+spec:
+  nodeName: "test-l27-12-103"
+  lvName: "aaaa"
