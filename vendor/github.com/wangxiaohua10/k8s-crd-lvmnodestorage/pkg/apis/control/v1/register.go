@@ -36,6 +36,10 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 	scheme.AddKnownTypes(SchemeGroupVersion,
 		&NodeLVMStorage{},
 		&NodeLVMStorageList{},
+		&NodeLvmVolumeGroup{},
+		&NodeLvmVolumeGroupList{},
+		&NodeLvmPhysicalVolume{},
+		&NodeLvmPhysicalVolumeList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

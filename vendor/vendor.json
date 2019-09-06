@@ -167,20 +167,20 @@
 		{
 			"checksumSHA1": "qnrAq7r+uqeLRsrJQdd0AlYDXAc=",
 			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control",
-			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
-			"revisionTime": "2019-09-06T07:13:41Z"
+			"revision": "2fc9f14d873409c4e0389f86c60fbd6ac30d45ce",
+			"revisionTime": "2019-09-06T09:09:49Z"
 		},
 		{
-			"checksumSHA1": "E9xWwqffGczYL233OwlGK3HBoL0=",
+			"checksumSHA1": "bFODLfGV/lPENWBW0E4FKPXUzzw=",
 			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/apis/control/v1",
-			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
-			"revisionTime": "2019-09-06T07:13:41Z"
+			"revision": "2fc9f14d873409c4e0389f86c60fbd6ac30d45ce",
+			"revisionTime": "2019-09-06T09:09:49Z"
 		},
 		{
-			"checksumSHA1": "pBlNsvBgHR5nr6SZ7JejthEdTNw=",
+			"checksumSHA1": "mC56fqMduM2wJC/dxumRAZ1sB5I=",
 			"path": "github.com/wangxiaohua10/k8s-crd-lvmnodestorage/pkg/client/clientset/versioned",
-			"revision": "18426075bd21a541f36f751908a512c9e4f65d57",
-			"revisionTime": "2019-09-06T07:13:41Z"
+			"revision": "2fc9f14d873409c4e0389f86c60fbd6ac30d45ce",
+			"revisionTime": "2019-09-06T09:09:49Z"
 		},
 		{
 			"checksumSHA1": "0womcu//WCAbCfyUnmdsgQefHWU=",
